@@ -1,4 +1,4 @@
-# IRO-WEBSITE (Issues Reporting Outlet)
+# IRO-PROJECT (Issues Reporting Outlet)
 
 A web-based Issues Reporting Outlet (IRO) developed as a CSC426 Software Engineering project for Adekunle Ajasin University, Akungba-Akoko (AAUA).
 
