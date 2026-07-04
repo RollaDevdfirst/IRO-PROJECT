@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Register — IRO | Issues Reporting Outlet</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="shell">
+
+    <!-- Brand panel -->
+    <aside class="brand-panel">
+      <img class="adire-pattern" src="assets/adire-pattern.svg" alt="" aria-hidden="true" />
+
+      <div class="brand-top">
+        <div class="eyebrow">AAUA · Akungba · Iwaro · Etioro · Ayegunle</div>
+        <h1>Report what's <span>happening</span> where you live.</h1>
+        <p class="lede">
+          IRO gives AAUA students and community indigenes one place to raise, track,
+          and resolve issues affecting daily life on and around campus.
+        </p>
+        <div class="locales">
+          <span class="locale-chip">Akungba</span>
+          <span class="locale-chip">Iwaro</span>
+          <span class="locale-chip">Etioro</span>
+          <span class="locale-chip">Ayegunle</span>
+        </div>
+      </div>
+
+      <div class="brand-bottom">
+        Issues Reporting Outlet — a channel between the community and the people who can act.
+      </div>
+    </aside>
+
+    <!-- Form panel -->
+    <main class="form-panel">
+      <form class="glass-card" id="registerForm" novalidate>
+        <div class="card-eyebrow">Create account</div>
+        <h2>Join IRO</h2>
+        <p class="sub">Register to report issues and track their resolution.</p>
+
+        <div class="form-message" id="formMessage" role="alert"></div>
+
+        <div class="field">
+          <label for="fullName">Full name</label>
+          <input type="text" id="fullName" placeholder="e.g. Adaeze Okonkwo" required autocomplete="name" />
+        </div>
+
+        <div class="field">
+          <label for="email">Email address</label>
+          <input type="email" id="email" placeholder="you@example.com" required autocomplete="email" />
+        </div>
+
+        <div class="field">
+          <label for="community">Community</label>
+          <select id="community" required>
+            <option value="" disabled selected>Select your community</option>
+            <option value="Akungba">Akungba</option>
+            <option value="Iwaro">Iwaro</option>
+            <option value="Etioro">Etioro</option>
+            <option value="Ayegunle">Ayegunle</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="At least 6 characters" required autocomplete="new-password" />
+        </div>
+
+        <div class="field">
+          <label for="confirmPassword">Confirm password</label>
+          <input type="password" id="confirmPassword" placeholder="Re-enter password" required autocomplete="new-password" />
+          <div class="field-hint">Passwords must match.</div>
+        </div>
+
+        <button type="submit" class="btn-primary" id="registerBtn">Create account</button>
+
+        <p class="switch-line">
+          Already have an account? <a href="login.html" class="link-cta">Log in</a>
+        </p>
+      </form>
+    </main>
+
+  </div>
+
+  <script type="module" src="js/register.js"></script>
+</body>
+</html>

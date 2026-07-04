@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Log in — IRO | Issues Reporting Outlet</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="shell">
+
+    <!-- Brand panel -->
+    <aside class="brand-panel">
+      <img class="adire-pattern" src="assets/adire-pattern.svg" alt="" aria-hidden="true" />
+
+      <div class="brand-top">
+        <div class="eyebrow">AAUA · Akungba · Iwaro · Etioro · Ayegunle</div>
+        <h1>Welcome back to <span>IRO</span>.</h1>
+        <p class="lede">
+          Log in to report a new issue, follow up on one you raised, or — if you're
+          an administrator — review and resolve reports from the community.
+        </p>
+        <div class="locales">
+          <span class="locale-chip">Akungba</span>
+          <span class="locale-chip">Iwaro</span>
+          <span class="locale-chip">Etioro</span>
+          <span class="locale-chip">Ayegunle</span>
+        </div>
+      </div>
+
+      <div class="brand-bottom">
+        Issues Reporting Outlet — a channel between the community and the people who can act.
+      </div>
+    </aside>
+
+    <!-- Form panel -->
+    <main class="form-panel">
+      <form class="glass-card" id="loginForm" novalidate>
+        <div class="card-eyebrow">Welcome back</div>
+        <h2>Log in</h2>
+        <p class="sub">Enter your details to access your dashboard.</p>
+
+        <div class="form-message" id="formMessage" role="alert"></div>
+
+        <div class="field">
+          <label for="email">Email address</label>
+          <input type="email" id="email" placeholder="you@example.com" required autocomplete="email" />
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Your password" required autocomplete="current-password" />
+        </div>
+
+        <button type="submit" class="btn-primary" id="loginBtn">Log in</button>
+
+        <p class="switch-line">
+          Don't have an account? <a href="register.html" class="link-cta">Register</a>
+        </p>
+      </form>
+    </main>
+
+  </div>
+
+  <script type="module" src="js/login.js"></script>
+</body>
+</html>

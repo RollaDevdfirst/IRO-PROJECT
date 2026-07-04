@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard — IRO</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="dashboard-shell">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <span class="mark">IRO</span>
+        <span class="tag">Issues Reporting Outlet</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <button class="nav-item active" data-tab="report">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 5v14M5 12h14"/></svg>
+          Report an Issue
+        </button>
+        <button class="nav-item" data-tab="my-reports">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 4h9l3 3v13H6z"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
+          My Reports
+        </button>
+        <button class="nav-item" data-tab="track">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          Track Status
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="nav-item logout" id="logoutBtn">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>
+          Log out
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="dashboard-main">
+      <div class="dashboard-topbar">
+        <div>
+          <div class="greeting-eyebrow">Welcome back</div>
+          <h1 id="greetingName">Loading...</h1>
+        </div>
+        <span class="community-badge" id="communityBadge">—</span>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-label">Total reports</div>
+          <div class="stat-value" id="statTotal">0</div>
+        </div>
+        <div class="stat-card pending">
+          <div class="stat-label">Pending</div>
+          <div class="stat-value" id="statPending">0</div>
+        </div>
+        <div class="stat-card resolved">
+          <div class="stat-label">Resolved</div>
+          <div class="stat-value" id="statResolved">0</div>
+        </div>
+      </div>
+
+      <!-- Report an Issue -->
+      <section class="tab-panel active" id="panel-report">
+        <div class="panel-card">
+          <h2>Report an Issue</h2>
+          <p class="panel-sub">Give as much detail as you can — this goes straight to the admin team.</p>
+
+          <div class="form-message" id="reportMessage" role="alert"></div>
+
+          <form id="reportForm" novalidate>
+            <div class="field">
+              <label for="reportTitle">Title</label>
+              <input type="text" id="reportTitle" placeholder="e.g. Broken streetlight along Iwaro road" required />
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="reportCategory">Category</label>
+                <select id="reportCategory" required>
+                  <option value="" disabled selected>Select a category</option>
+                  <option value="Security">Security</option>
+                  <option value="Power">Power</option>
+                  <option value="Water">Water</option>
+                  <option value="Roads">Roads</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="reportCommunity">Location</label>
+                <select id="reportCommunity" required>
+                  <option value="" disabled selected>Select a community</option>
+                  <option value="Akungba">Akungba</option>
+                  <option value="Iwaro">Iwaro</option>
+                  <option value="Etioro">Etioro</option>
+                  <option value="Ayegunle">Ayegunle</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="reportDescription">Description</label>
+              <textarea id="reportDescription" rows="5" placeholder="Describe what's happening, when you noticed it, and anything else that could help." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" id="reportSubmitBtn">Submit report</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- My Reports -->
+      <section class="tab-panel" id="panel-my-reports">
+        <div class="panel-card">
+          <h2>My Reports</h2>
+          <p class="panel-sub">Everything you've submitted so far.</p>
+          <div id="myReportsList">
+            <div class="empty-state" id="myReportsEmpty">
+              <svg class="empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M6 4h9l3 3v13H6z"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
+              <p>You haven't submitted any reports yet. Once you do, they'll show up here.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Track Status -->
+      <section class="tab-panel" id="panel-track">
+        <div class="panel-card">
+          <h2>Track Report Status</h2>
+          <p class="panel-sub">Follow the progress of a report you've raised.</p>
+          <div id="trackContent">
+            <div class="empty-state" id="trackEmpty">
+              <svg class="empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+              <p>Go to My Reports and click "Track" on any report to see its progress here.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+  </div>
+
+  <script type="module" src="js/dashboard.js"></script>
+  <script type="module" src="js/report.js"></script>
+</body>
+</html>
